@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body{
+    font-family: "Helvetica Neue", Arial, 
+    "Hiragino Kaku Gotic ProN","Hiragino Sans",
+     Meiryo, sans-serif;
+}
+/* ブラウザ独自の余計な余白をゼロにする */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 箇条書きの「・」を消す */
+li {
+    list-style: none;
+}
+
+/* リンクの下線を消して、色を周りに合わせる */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 画像が画面からはみ出さないようにする */
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+/* ロゴ（profile）のデザイン */
+.site-logo a {
+    display: flex;
+    justify-content: center; /*左右の真ん中*/
+    align-items: center; /*上下の真ん中*/
+    
+    background-color: #393e46;
+    color:#fff;
+    width: 120px;
+    height: 40px; 
+
+    font-size: 20px;
+    font-weight: bold;/* 太字にする */
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;/* 下線がもし出ていたらこれで消す */
+}
+/* １.ヘッダー全体を横並びにする */
+header {
+    /* 横並びにする魔法の言葉 */
+    display: flex;
+    /* ロゴを左、メニューを右端に寄せる */
+    justify-content: space-between;
+    /* 上下の中心を揃える */
+    align-items: center;
+    /* 上下の余白をfigmaの数値に合わせる（figmaで確認） */
+    padding: 10px 211px;
+}
+/* メニューを横並びにする */
+.header-nav ul {
+    
+    display: flex;           /* リスト項目を横並びに */
+    gap: 30px;               /* aboutとbicycleの間の隙間 */
+}
+/* メニューの文字のデザイン */
+.header-nav a {
+    
+    color: #000;           /* 文字を黒に */
+    text-decoration: none;   /* 下線を消す */
+    font-size: 14px;         /* 大きさをfigmaで測って調整 */
+
+}
+#main-visual img {
+    width: 100%;             /* 横幅は画面の端から端まで */
+    height: 600px;           /* ここで高さを固定！ */
+    object-fit: cover;       /* ★これが「切り抜き」の主役 */
+    object-position: center; /* ★どこを基準に切り抜くか */
+}
+/* ① Aboutセクション全体の配置 */
+#about {
+    margin-top: 80px;        /* メイン画像からの距離 */
+    margin-bottom: 270px;    /* 下のBicycleまでの距離 */
+    padding: 0 20px;         /* 画面が小さくなった時のための予備の余白 */
+}
+/* ② 見出し（Aboutの文字）のデザイン */
+.section-title {
+    font-size: 32px;         /* Figmaで測ったサイズ */
+    color: #393e46;
+    text-align: center;      /* 真ん中に寄せる */
+    margin-bottom: 70px;     /* 見出しから写真までの距離 */
+    /* 下に線を引きたい場合はここに追加 */
+    border-bottom: 1px solid #393e46;
+    width: fit-content;      /* 線の長さを文字に合わせる */
+    margin-left: auto;       /* 左右中央に置くためのセット */
+    margin-right: auto;
+}
+
+/* ③ 写真とテキストを横に並べる魔法 */
+.about-content {
+    display: flex;           /* 横並びにする！ */
+    justify-content: center; /* 中央に寄せる */
+    align-items: center;     /* 上下の中心を揃える */
+    gap: 40px;               /* 写真と文字の間のスキマ（だいたいでOK） */
+}
+
+/* ④ プロフィール写真 */
+.about-img {
+    width: 100px;            /* 写真の大きさ */
+    height: 100px;
+    border-radius: 50%;      /* これで正円になる */
+    object-fit: cover;       /* 写真を歪ませない */
+}
+
+/* ⑤ テキストの箱 */
+.about-text {
+    width: 398px;            /* Figmaで測ったテキスト幅 */
+}
+
+/* ① Bicycleセクション全体の余白 */
+#bicycle {
+    margin-bottom: 270px;    /* ① Bicycleセクション全体の余白 */
+    padding: 0 20px;         /* スマホで見た時に左右がくっつかないための予備 */
+}
+
+/* ② 3つの自転車を横に並べる魔法の箱 */
+.bicycle-list {
+    display: flex;            /* これで横並び！ */
+    justify-content: center;  /* 3つまとめて中央へ！ */
+    gap:  30px;               /* 自転車同士のスキマ（Figmaで測った数値に変えてもOK） */
+    max-width: 1200px;        /* 画面いっぱいに広がりすぎないように制限 */
+    margin: 0 auto;           /* これが「左右中央揃え」の決定版！ */
+
+}
+
+/* ③ 1つ1つの自転車セット */
+.bicycle-item {
+    width: 32%;               /* 3枚並ぶのでだいたい1/3のサイズに */
+    text-align: center;       /* 中のタイトルと文字を真ん中寄せ */
+}
+
+/* ④ 自転車の画像 */
+.bicycle-item img {
+    width: 100%;              /* 小さな箱(bicycle-item)の幅にピッタリ合わせる */
+    height: auto;             /* 高さは自動で調整して歪ませない */
+}
+
+/* ⑤ 自転車のタイトル（h3） */
+.bicycle-item h3 {
+    font-size: 16px;         /* Figmaで測ったサイズにしてみてね */
+    margin-top: 10px;        /* 画像とのスキマ */
+    font-weight: bold;
+
+}
+
+/* ⑥ 自転車の説明文（p） */
+.bicycle-item p {
+    font-size: 14px;
+    margin-top: 10px;         /* タイトルとのスキマ */
+}
+
+#footer{
+    font-size: 8px;            /* コピーライトは小さめが上品 */
+    padding: 10px 0;           /* 上下に少しだけスキマを作る */
+    text-align: center;        /* 魔法の言葉：真ん中寄せ */
+}
